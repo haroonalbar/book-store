@@ -5,6 +5,7 @@ import (
 	"github.com/jinzhu/gorm"
 )
 
+// !look
 var db *gorm.DB
 
 type Book struct {
@@ -17,5 +18,34 @@ type Book struct {
 func init() {
 	config.Connect()
 	db = config.GetDB()
+	// !look
 	db.AutoMigrate(&Book{})
+}
+
+func (b *Book) CreateBook() *Book {
+	// !look
+	db.NewRecord(b)
+	db.Create(&b)
+	return b
+}
+
+func GetAllBooks() []Book {
+	var Books []Book
+	// !look
+	db.Find(&Books)
+	return Books
+}
+
+func GetBookByID(id int64) (*Book, *gorm.DB) {
+	var getBook Book
+	// !look
+	db := db.Where("ID=?", id).Find(&getBook)
+	return &getBook, db
+}
+
+func DeleteBook(id int64) Book {
+	var book Book
+	// !look
+	db.Where("ID=?", id).Delete(&book)
+	return book
 }

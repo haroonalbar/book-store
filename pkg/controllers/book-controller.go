@@ -10,8 +10,6 @@ import (
 	"github.com/haroonalbar/book-store/pkg/utils"
 )
 
-var Book models.Book
-
 func GetBook(w http.ResponseWriter, r *http.Request) {
 	books := models.GetAllBooks()
 	res, _ := json.Marshal(books)
@@ -29,10 +27,6 @@ func GetBookByID(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	book, _ := models.GetBookByID(id)
-	if err != nil {
-		http.Error(w, "Error getting book", http.StatusBadRequest)
-		return
-	}
 	res, _ := json.Marshal(book)
 	w.Header().Set("Content-Type", "pkglication/json")
 	w.WriteHeader(http.StatusOK)
@@ -41,9 +35,7 @@ func GetBookByID(w http.ResponseWriter, r *http.Request) {
 
 func CreateBook(w http.ResponseWriter, r *http.Request) {
 	book := &models.Book{}
-	// from utils
 	utils.ParseBody(r, book)
-	// from models
 	b := book.CreateBook()
 	res, _ := json.Marshal(b)
 	w.Header().Set("Content-Type", "pkglication/json")
@@ -88,7 +80,6 @@ func UpdateBook(w http.ResponseWriter, r *http.Request) {
 	if updateBook.Publication != "" {
 		book.Publication = updateBook.Publication
 	}
-	// book.UpdatedAt = time.Now().UTC()
 
 	db.Save(&book)
 

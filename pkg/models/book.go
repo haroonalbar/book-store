@@ -8,7 +8,6 @@ import (
 	"github.com/joho/godotenv"
 )
 
-// !look
 var db *gorm.DB
 
 type Book struct {
@@ -25,34 +24,32 @@ func init() {
 	}
 	config.Connect()
 	db = config.GetDB()
-	// !look
+	//  This function will create tables, missing columns, and missing indexes, and will not delete/change any existing columns and their types
 	db.AutoMigrate(&Book{})
 }
 
 func (b *Book) CreateBook() *Book {
-	// !look
+	// checks if the record is new or not
 	db.NewRecord(b)
+	// add the record
 	db.Create(&b)
 	return b
 }
 
 func GetAllBooks() []Book {
 	var Books []Book
-	// !look
 	db.Find(&Books)
 	return Books
 }
 
 func GetBookByID(id int64) (*Book, *gorm.DB) {
 	var getBook Book
-	// !look
 	db := db.Where("ID=?", id).Find(&getBook)
 	return &getBook, db
 }
 
 func DeleteBook(id int64) Book {
 	var book Book
-	// !look
 	db.Where("ID=?", id).Delete(&book)
 	return book
 }

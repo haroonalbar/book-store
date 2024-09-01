@@ -8,6 +8,7 @@ This is a basic CRUD server for Books.
 - Gorilla Mux - Router for handling requests.
 - GORM - ORM for golang.
 - Mysql - Database.
+- Godotenv - for loading .env
 
 ## Getting started
 

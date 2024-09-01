@@ -27,3 +27,16 @@ go build -o ./bin/book ./cmd/main
 ```bash
 ./bin/book
 ```
+
+5. Apis
+
+- Get all books:
+    GET {path}/book/  
+- Get book by ID:
+    GET {path}/book/{id}  
+- Create Book
+    POST {path}/book/ with body values of name, author and publisher.
+- Delete Book
+    DELETE {path}/book/{id}
+- Update Book
+    PUT {path}/book/{id} with body of updated values of name, author and publisher.

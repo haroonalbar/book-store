@@ -11,24 +11,31 @@ This is a basic CRUD server for Books.
 
 ## Getting started
 
-1. Setup mysql and create a db.
+1. Setting up project
 
-2. Specify the db_url and port of the application in .env
+```bash
+git clone https://github.com/haroonalbar/book-store.github
+cd book-store
+```
+
+2. Setup mysql and create a db.
+
+3. Specify the db_url and port of the application in .env
 there is .env.example for reference.
 
-3. To build and get the binary for execution:
+4. To build and get the binary for execution:
 
 ```bash
 go build -o ./bin/book ./cmd/main
 ```
 
-4. Run the programme:
+5. Run the programme:
 
 ```bash
 ./bin/book
 ```
 
-5. Apis
+## Apis
 
 - Get all books:
     GET {path}/book/  

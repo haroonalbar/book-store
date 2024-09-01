@@ -1,4 +1,4 @@
-# Books
+# Book Store
 
 This project is a basic CRUD (Create, Read, Update, Delete) server for managing a collection of books. It is designed to demonstrate the use of Golang for building a RESTful API, utilizing various libraries and tools to handle routing, database interactions, and environment configurations. The server allows users to perform operations such as adding new books, retrieving details of existing books, updating book information, and deleting books from the database.
 
@@ -11,11 +11,11 @@ This project is a basic CRUD (Create, Read, Update, Delete) server for managing 
 
 ## Technologies Used
 
-- Golang - A statically typed, compiled programming language designed for simplicity and efficiency.
-- Gorilla Mux - A powerful URL router and dispatcher for Golang, used for handling incoming HTTP requests and routing them to the appropriate handlers.
-- GORM - An Object-Relational Mapping (ORM) library for Golang, which simplifies database interactions by allowing developers to work with database records as if they were regular Go objects.
-- MySQL - A widely-used relational database management system, chosen for its reliability and performance.
-- Godotenv - A library for loading environment variables from a .env file, making it easier to manage configuration settings for different environments (development, testing, production).
+- **Golang** - A statically typed, compiled programming language designed for simplicity and efficiency.
+- **Gorilla** Mux - A powerful URL router and dispatcher for Golang, used for handling incoming HTTP requests and routing them to the appropriate handlers.
+- **GORM** - An Object-Relational Mapping (ORM) library for Golang, which simplifies database interactions by allowing developers to work with database records as if they were regular Go objects.
+- **MySQL** - A widely-used relational database management system, chosen for its reliability and performance.
+- **Godotenv** - A library for loading environment variables from a .env file, making it easier to manage configuration settings for different environments (development, testing, production).
 
 ## Getting started
 
@@ -98,3 +98,7 @@ go build -o ./bin/book ./cmd/main
 - pkg/models: Database models and methods for interacting with the database.
 - pkg/routes: Route definitions for the API.
 - pkg/utils: Utility functions.
+
+## License
+
+This project is licensed under the MIT License.

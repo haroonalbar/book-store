@@ -7,6 +7,7 @@ This project is a basic CRUD (Create, Read, Update, Delete) server for managing 
 - [Getting started](#getting-started)
 - [APIs](#apis)
 - [Project Structure](#project-structure)
+- [License](#license)
 <!--toc:end-->
 
 ## Technologies Used

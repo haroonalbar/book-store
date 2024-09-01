@@ -1,8 +1,11 @@
 package models
 
 import (
+	"log"
+
 	"github.com/haroonalbar/book-store/pkg/config"
 	"github.com/jinzhu/gorm"
+	"github.com/joho/godotenv"
 )
 
 // !look
@@ -16,6 +19,10 @@ type Book struct {
 }
 
 func init() {
+	err := godotenv.Load()
+	if err != nil {
+		log.Printf("Error loading .env %v", err)
+	}
 	config.Connect()
 	db = config.GetDB()
 	// !look

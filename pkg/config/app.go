@@ -2,6 +2,7 @@ package config
 
 import (
 	"log"
+	"os"
 
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
@@ -10,7 +11,7 @@ import (
 var db *gorm.DB
 
 func Connect() {
-	connstr := "name:pass/tablename?charset=utf8&parseTime=True&loc=Local"
+	connstr := os.Getenv("DB_URL")
 	// connect to mysql db
 	d, err := gorm.Open("mysql", connstr)
 	if err != nil {

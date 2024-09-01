@@ -2,6 +2,13 @@
 
 This is a basic CRUD server for Books.
 
+<!--toc:start-->
+- [Books](#books)
+  - [Technologies Used](#technologies-used)
+  - [Getting started](#getting-started)
+  - [Apis](#apis)
+<!--toc:end-->
+
 ## Technologies Used
 
 - Golang - Programming Language.
